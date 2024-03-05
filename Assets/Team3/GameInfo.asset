@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
   teamNumber: 0
-  gameTitle: Bard
+  gameTitle: Sekisame
   gameIcon: {fileID: 0}
   prompt: 
-  singlePlayerScene: {fileID: 102900000, guid: cb04cf1cd43794942ace9121ae857a5f, type: 3}
+  singlePlayerScene: {fileID: 102900000, guid: f30cfa35b756b8d4180b1b88becc4754, type: 3}
   twoPlayerScene: {fileID: 0}
   controls: []
   rightPlayerAltControls: []
-  singlePlayerScenePath: Assets/Team3/Scenes/Scene.unity
+  singlePlayerScenePath: Assets/Team3/Scenes/Fish1P.unity
   twoPlayerScenePath: 
   postgameMessages: []
   bannerImage: {fileID: 0}

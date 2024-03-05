@@ -42,7 +42,7 @@ public class GamesIndex : ScriptableObject
     }
     #endif
 
-    [Header("microMix Framework v. 1.1")]
+    [Header("microMix Framework v. 1.2")]
 
     [Header("Testing Settings")]
     public MicrogamesManager.SkipStage quickTestSkip;
