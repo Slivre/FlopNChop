@@ -27,28 +27,8 @@ namespace team3
         // Update is called once per frame
         void Update()
         {
-            if (button1.IsPressed())
-            {
-                ac.SetBool("LiftHead", true);
-                LiftHead = true;
-            }
-            else
-            {
-                LiftHead = false;
-            }
-
-            if (button2.IsPressed())
-            {
-                ac.SetBool("LiftTail", true);
-                LiftTail = true;
-            }
-            else
-            {
-                LiftTail = false;
-            }
-
-            
-
+            ac.SetBool("LiftTail", LiftTail);
+            ac.SetBool("LiftHead", LiftHead);
         }
 
         protected override void OnButton1Pressed(InputAction.CallbackContext context)
