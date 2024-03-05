@@ -11,12 +11,15 @@ namespace team3
         Animator ac;
         Rigidbody rb;
 
-
         public bool LiftHead;
         public bool LiftTail;
 
         public float HorizontalForce;
         public float VerticalForce;
+
+        public LayerMask groundLayer;
+        public Transform groundCheck;
+        public Vector3 groundCheckSize;
         // Start is called before the first frame update
         void Start()
         {
@@ -34,34 +37,47 @@ namespace team3
         protected override void OnButton1Pressed(InputAction.CallbackContext context)
         {
             LiftHead = true;
-            Debug.Log("Do action 1");
-
         }
 
         protected override void OnButton1Released(InputAction.CallbackContext context)
         {
             LiftHead = false;
             Vector3 force = new Vector3(rb.velocity.x, VerticalForce, HorizontalForce);
-            rb.AddForce(force, ForceMode.Impulse);
-            Debug.Log("Stop action 1");
-
+            if (isGrounded())
+            {
+                rb.AddForce(force, ForceMode.Impulse);
+            }
         }
 
         protected override void OnButton2Pressed(InputAction.CallbackContext context)
         {
             LiftTail = true;
-            Debug.Log("Do action 2");
-
         }
 
         protected override void OnButton2Released(InputAction.CallbackContext context)
         {
             LiftTail = false;
             Vector3 force = new Vector3(rb.velocity.x, VerticalForce, -HorizontalForce);
-            rb.AddForce(force, ForceMode.Impulse);
-            Debug.Log("Stop action 2");
-
+            if (isGrounded())
+            {
+                rb.AddForce(force, ForceMode.Impulse);
+            }
         }
+
+        bool isGrounded()
+        {
+            if(Physics.OverlapBox(groundCheck.position, groundCheckSize, Quaternion.identity, groundLayer).Length > 0)
+            {
+                return true;
+            }
+                return false;
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawWireCube(groundCheck.position, groundCheckSize);
+        }
+
     }
 }
 
