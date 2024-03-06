@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 namespace team03
 {
@@ -14,9 +15,10 @@ namespace team03
         float fishDirPreDelay;
 
         public Animator ArmAC;
-        public Animator HeadAC;
+        public Animator TableAC;
 
         public Transform fish;
+        public Transform Head;
 
         public Vector3 knifeOffset;
 
@@ -41,7 +43,8 @@ namespace team03
 
         private void Update()
         {
-           
+            Head.LookAt(fish);
+
             //Updates the fish's direction every few seconds
             if (currentFollowDelay < FollowDelay)
             {
@@ -131,13 +134,32 @@ namespace team03
         {
             if(other.transform == fish)
             {
-                FishInRange = true;
+                float delay = Random.Range(0f,1f);
+                Debug.Log(delay);
+                Invoke("Chop", delay);
             }
         }
 
         private void OnDrawGizmos()
         {
             Gizmos.DrawSphere(transform.position + knifeOffset, 1);
+        }
+
+        public void Chop()
+        {
+            FishInRange = true;
+            ArmAC.SetBool("Chop",true);
+        }
+
+        public void EndChop()
+        {
+            FishInRange = false;
+            ArmAC.SetBool("Chop", false);
+        }
+
+        public void ObjectShake()
+        {
+            TableAC.Play("TableObjectsBounce");
         }
     }
 } 

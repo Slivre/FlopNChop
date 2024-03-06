@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace team3
+namespace team03
 {
     public class FishController : MicrogameInputEvents
     {
