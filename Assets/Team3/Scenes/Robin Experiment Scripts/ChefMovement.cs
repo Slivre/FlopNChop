@@ -9,41 +9,51 @@ namespace team03
     {
         public bool HasPlayer;
 
-        Rigidbody rb;
+        public float FollowDelay;
+        float currentFollowDelay;
+        float fishDirPreDelay;
+
+        public Animator ArmAC;
+        public Animator HeadAC;
 
         public Transform fish;
 
+        public Vector3 knifeOffset;
+
+        public bool FishInRange;
+
         public float HorizontalForce;
-
         public float MoveDirection;
-
-        private Vector3 dir = new Vector3(0, 0, 1);
-        private Vector3 dir2 = new Vector3(0, 0, -1);
 
         //adjust this to change speed
         public float bobSpeed = 5f;
         //adjust this to change how high it goes
         public float height = 0.5f;
 
-        public bool LPressed;
-        public bool RPressed;
-
         //Code for chef timing
-
         public float chefCd;
         public bool chefStart = true;
 
-
-
         private void Start()
         {
-            rb = GetComponent<Rigidbody>();
             chefCd = Random.Range(3f, 5.0f);
-
-        }
+        }      
 
         private void Update()
         {
+           
+            //Updates the fish's direction every few seconds
+            if (currentFollowDelay < FollowDelay)
+            {
+                currentFollowDelay += Time.deltaTime;
+            }
+            else
+            {
+                fishDirPreDelay = FollowFish();
+                currentFollowDelay = 0;
+            }
+
+            //Move the chef based on have player or not
             if (HasPlayer)
             {
                 MoveDirection = -stick.normalized.x;
@@ -51,10 +61,11 @@ namespace team03
             }
             else
             {
-                Debug.Log(FollowFish());
-                Move(FollowFish());
+                if (!FishInRange)
+                {
+                    Move(fishDirPreDelay);
+                }
             }
-
 
             //get the objects current position and put it in a variable so we can access it later with less code
             Vector3 pos = transform.position;
@@ -64,39 +75,9 @@ namespace team03
             //set the object's Y to the new calculated Y
 
             transform.position = new Vector3(transform.position.x, newY, transform.position.z);
-
-            //if (LPressed)
-            //{
-            //    transform.Translate(dir * HorizontalForce * Time.deltaTime);
-            //}
-            //if (RPressed)
-            //{
-            //    transform.Translate(dir2 * HorizontalForce * Time.deltaTime);
-            //}
             //Timer For Chef Movement
 
             chefCd -= Time.deltaTime;
-
-            //if (chefStart && chefCd < 0)
-            //{
-            //    if (fish.position.z < transform.position.z)
-            //    {
-            //        transform.Translate(dir2 * HorizontalForce * Time.deltaTime);
-            //        Debug.Log("right");
-            //    }
-
-            //    else if (fish.position.z > transform.position.z)
-            //    {
-            //        transform.Translate(dir * HorizontalForce * Time.deltaTime);
-            //        Debug.Log("left");
-            //    }
-            //    //else if (fish.position.z == transform.position.z)
-            //    //{
-            //    //    chefStart = false; // make sure we dont' call this again }
-
-
-            //    //}
-            //}
         }
 
         public void Move(float Dir)
@@ -110,7 +91,7 @@ namespace team03
         {
             if (chefStart && chefCd <= 0)
             {
-                if (fish.position.z < transform.position.z)
+                if (fish.position.z < transform.position.z + knifeOffset.z)
                 {
                     return -1;
                 }
@@ -124,35 +105,40 @@ namespace team03
 
         protected override void OnButton1Pressed(InputAction.CallbackContext context)
         {
-            LPressed = true;
-            
-
-
             Debug.Log("Do action 1");
 
         }
 
         protected override void OnButton1Released(InputAction.CallbackContext context)
         {
-            LPressed = false;
             Debug.Log("Stop action 1");
 
         }
 
         protected override void OnButton2Pressed(InputAction.CallbackContext context)
         {
-            RPressed = true;
             Debug.Log("Do action 2");
 
         }
 
         protected override void OnButton2Released(InputAction.CallbackContext context)
         {
-            RPressed = false;
             Debug.Log("Stop action 2");
 
         }
-      
+
+        private void OnTriggerEnter(Collider other)
+        {
+            if(other.transform == fish)
+            {
+                FishInRange = true;
+            }
+        }
+
+        private void OnDrawGizmos()
+        {
+            Gizmos.DrawSphere(transform.position + knifeOffset, 1);
+        }
     }
 } 
 

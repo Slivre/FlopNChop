@@ -211,15 +211,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   getInputFrom: 0
   HasPlayer: 0
+  FollowDelay: 1
+  ArmAC: {fileID: 0}
+  HeadAC: {fileID: 0}
   fish: {fileID: 1444987513}
+  knifeOffset: {x: -9.46, y: -2.65, z: 4.42}
+  FishInRange: 0
   HorizontalForce: 5
   MoveDirection: 0
-  bobSpeed: 0
-  height: 0
-  LPressed: 0
-  RPressed: 0
+  bobSpeed: 3
+  height: 0.001
   chefCd: 0
   chefStart: 1
+--- !u!65 &60230781
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60230778}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8289479, y: 7.990257, z: 11.63661}
+  m_Center: {x: 3.2544336, y: -2.0381207, z: 2.7047725}
+--- !u!95 &60230782
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60230778}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 246cb34c214559447af0fa4a924183cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &80444692
 GameObject:
   m_ObjectHideFlags: 0
@@ -1567,11 +1612,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66ca35b2fa33a6c4b8952e0fae548ecc, type: 3}
+--- !u!1 &1444987512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2772847457848429405, guid: 8140b7f2bf4b41643a8e4fd4bcecf72c, type: 3}
+  m_PrefabInstance: {fileID: 2009510997912643724}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1444987513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3256369431799321063, guid: 8140b7f2bf4b41643a8e4fd4bcecf72c, type: 3}
   m_PrefabInstance: {fileID: 2009510997912643724}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1444987517
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444987512}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0926182, y: 3.3929527, z: 1.2633016}
+  m_Center: {x: 0.11816746, y: 0.24995758, z: -0.1316508}
 --- !u!1 &1471613496
 GameObject:
   m_ObjectHideFlags: 0
@@ -1606,13 +1677,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   getInputFrom: 0
   HasPlayer: 1
+  FollowDelay: 0
+  ArmAC: {fileID: 0}
+  HeadAC: {fileID: 0}
   fish: {fileID: 1444987513}
+  knifeOffset: {x: 0, y: 0, z: 0}
+  FishInRange: 0
   HorizontalForce: 2
   MoveDirection: 0
   bobSpeed: 3
   height: 0.01
-  LPressed: 0
-  RPressed: 0
   chefCd: 0
   chefStart: 1
 --- !u!65 &1471613498
@@ -1916,7 +1990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8890435782923472894, guid: 9d7c11b902cbd6246861f13d994356ce, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1454239
+      value: 1.145424
       objectReference: {fileID: 0}
     - target: {fileID: 8890435782923472894, guid: 9d7c11b902cbd6246861f13d994356ce, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1957,6 +2031,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 908084196114220506, guid: 9d7c11b902cbd6246861f13d994356ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: 60230779}
+    - targetCorrespondingSourceObject: {fileID: 908084196114220506, guid: 9d7c11b902cbd6246861f13d994356ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 60230781}
+    - targetCorrespondingSourceObject: {fileID: 908084196114220506, guid: 9d7c11b902cbd6246861f13d994356ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 60230782}
   m_SourcePrefab: {fileID: 100100000, guid: 9d7c11b902cbd6246861f13d994356ce, type: 3}
 --- !u!1 &1612120458
 GameObject:
@@ -2458,7 +2538,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2772847457848429405, guid: 8140b7f2bf4b41643a8e4fd4bcecf72c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1444987517}
   m_SourcePrefab: {fileID: 100100000, guid: 8140b7f2bf4b41643a8e4fd4bcecf72c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
