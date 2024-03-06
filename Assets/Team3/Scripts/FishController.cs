@@ -8,7 +8,8 @@ namespace team3
     public class FishController : MicrogameInputEvents
     {
         public bool button1Pressed;
-        Animator ac;
+        public Animator HeadAC;
+        public Animator TailAC;
         Rigidbody rb;
 
         public bool LiftHead;
@@ -16,6 +17,7 @@ namespace team3
 
         public float HorizontalForce;
         public float VerticalForce;
+        public float GravityForce;
 
         public LayerMask groundLayer;
         public Transform groundCheck;
@@ -24,14 +26,18 @@ namespace team3
         void Start()
         {
             rb = GetComponent<Rigidbody>();
-            ac = GetComponent<Animator>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            ac.SetBool("LiftTail", LiftTail);
-            ac.SetBool("LiftHead", LiftHead);
+            TailAC.SetBool("LiftTail", LiftTail);
+            HeadAC.SetBool("LiftHead", LiftHead);
+
+            if (!isGrounded())
+            {
+                rb.AddForce(Vector3.down * GravityForce * rb.mass, ForceMode.Force);
+            }
         }
 
         protected override void OnButton1Pressed(InputAction.CallbackContext context)
