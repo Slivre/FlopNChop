@@ -8,6 +8,7 @@ namespace team03
 {
     public class ChefMovement : MicrogameInputEvents
     {
+        bool ActionAllowed;
         public bool HasPlayer;
 
         public float FollowDelay;
@@ -19,6 +20,7 @@ namespace team03
 
         public Transform fish;
         public Transform Head;
+        public Knife knife;
 
         public Vector3 knifeOffset;
 
@@ -45,28 +47,31 @@ namespace team03
         {
             Head.LookAt(fish);
 
-            //Updates the fish's direction every few seconds
-            if (currentFollowDelay < FollowDelay)
+            if (ActionAllowed)
             {
-                currentFollowDelay += Time.deltaTime;
-            }
-            else
-            {
-                fishDirPreDelay = FollowFish();
-                currentFollowDelay = 0;
-            }
-
-            //Move the chef based on have player or not
-            if (HasPlayer)
-            {
-                MoveDirection = -stick.normalized.x;
-                Move(MoveDirection);
-            }
-            else
-            {
-                if (!FishInRange)
+                //Updates the fish's direction every few seconds
+                if (currentFollowDelay < FollowDelay)
                 {
-                    Move(fishDirPreDelay);
+                    currentFollowDelay += Time.deltaTime;
+                }
+                else
+                {
+                    fishDirPreDelay = FollowFish();
+                    currentFollowDelay = 0;
+                }
+
+                //Move the chef based on have player or not
+                if (HasPlayer)
+                {
+                    MoveDirection = -stick.normalized.x;
+                    Move(MoveDirection);
+                }
+                else
+                {
+                    if (!FishInRange)
+                    {
+                        Move(fishDirPreDelay);
+                    }
                 }
             }
 
@@ -151,6 +156,15 @@ namespace team03
             ArmAC.SetBool("Chop",true);
         }
 
+        public void canDamage()
+        {
+            knife.CanDamage = true;
+        }
+
+        public void EndDamage()
+        {
+            knife.CanDamage = false;
+        }
         public void EndChop()
         {
             FishInRange = false;
@@ -160,6 +174,18 @@ namespace team03
         public void ObjectShake()
         {
             TableAC.Play("TableObjectsBounce");
+        }
+
+        protected override void OnTimesUp()
+        {
+            base.OnTimesUp();
+            ActionAllowed = false;
+        }
+
+        protected override void OnGameStart()
+        {
+            ActionAllowed = true;
+            base.OnGameStart();
         }
     }
 } 

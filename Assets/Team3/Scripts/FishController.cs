@@ -69,6 +69,18 @@ namespace team03
                 rb.AddForce(force, ForceMode.Impulse);
             }
         }
+        public void startRagdoll()
+        {
+            HeadAC.enabled = false;
+            TailAC.enabled = false;
+        }
+
+        public void EndRagdoll()
+        {
+            HeadAC.enabled = true;
+            TailAC.enabled = true;
+        }
+
 
         bool isGrounded()
         {
