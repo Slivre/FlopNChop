@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24fbde2c24ab1544bd81b52842e8ec5, type: 3}
+  m_Name: T03_FlopNChop
+  m_EditorClassIdentifier: 
+  includeInRandomizer: 1
+  teamNumber: 3
+  gameTitle: Flop 'n' Chop
+  gameIcon: {fileID: 21300000, guid: 5ad3d0e31205f604b9c182368d33550b, type: 3}
+  announcerText: Flop
+  announcerAudioFile: Flop-RX10MDc_161-01
+  _announcerAudio: {fileID: 8300000, guid: 4ac1a57cb43c31444a383157a251fbaf, type: 3}
+  singlePlayerScene: {fileID: 102900000, guid: 855eaf0b8bafe2f448182ad24219f591, type: 3}
+  twoPlayerScene: {fileID: 102900000, guid: 24b80b46635dcae4f8f22f4f9a81dc53, type: 3}
+  controls:
+  - label: Flop Head
+    primary: 1
+    joiner: 0
+    secondary: 0
+  - label: Flop Tail
+    primary: 2
+    joiner: 0
+    secondary: 0
+  rightPlayerAltControls:
+  - label: Move
+    primary: 100
+    joiner: 0
+    secondary: 0
+  - label: Chop
+    primary: 1
+    joiner: 0
+    secondary: 0
+  singlePlayerScenePath: Assets/Team03/Scenes/Fish2P 1.unity
+  twoPlayerScenePath: Assets/Team03/Scenes/Fish2P.unity
+  postgameMessages:
+  - Give a man a fish and you feed him for a day; teach a man to fish and you feed
+    him for a lifetime.
+  - It's getting fishay in the hizzay!
+  - It's ok to eat fish because they don't have feelings.
+  bannerImage: {fileID: 21300000, guid: 73c569d83f4561844817542e10f13b45, type: 3}
+  developerCredits:
+  - Abby Robitaille
+  - Charlie Tipping
+  - Claudia Rando
+  - Deegan Kosen
+  - Emily Amaral
+  - Jack Caunter
+  - Kathleen Hutten
+  - Robin Makariak
+  - Zephyr Zhu
+  licensedWorksCredits:
+  - titleOfWork: Hulk Hand
+    creator: '@German_Martian'
+    source: Sketchfab
+    url: https://sketchfab.com/3d-models/hulk-hand-f7c4cf22bbc14d438a1378a91e9e4ddd
+    licence: CC Attribution
+  - titleOfWork: Bubbles 003
+    creator: Pixabay
+    source: Pixabay
+    url: https://pixabay.com/sound-effects/search/water%20bubbles/
+    licence: Royalty Free
+  - titleOfWork: Food, meat
+    creator: Hollywood Edge
+    source: Soundideas
+    url: https://soundideas.sourceaudio.com/albums
+    licence: Non-Commercial education

@@ -38,6 +38,10 @@ namespace team03
         public float chefCd;
         public bool chefStart = true;
 
+        public AudioSource ChefAudioSource;
+        public AudioSource KnifeAudioSource;
+
+        public AudioClip[] ChefSFXClips;
         private void Start()
         {
             chefCd = Random.Range(3f, 5.0f);
@@ -56,8 +60,11 @@ namespace team03
                 }
                 else
                 {
-                    fishDirPreDelay = FollowFish();
-                    currentFollowDelay = 0;
+                    if (fish != null)
+                    {
+                        fishDirPreDelay = FollowFish();
+                        currentFollowDelay = 0;
+                    }
                 }
 
                 //Move the chef based on have player or not
@@ -92,7 +99,6 @@ namespace team03
         public void Move(float Dir)
         {           
             Vector3 HorizontalDir = new Vector3(Dir, 0, 0);
-            Debug.Log(HorizontalDir);
             transform.Translate(HorizontalDir * HorizontalForce * Time.deltaTime);
         }
 
@@ -115,25 +121,18 @@ namespace team03
         protected override void OnButton1Pressed(InputAction.CallbackContext context)
         {
             Chop();
-
         }
 
         protected override void OnButton1Released(InputAction.CallbackContext context)
         {
-            Debug.Log("Stop action 1");
-
         }
 
         protected override void OnButton2Pressed(InputAction.CallbackContext context)
         {
-            Debug.Log("Do action 2");
-
         }
 
         protected override void OnButton2Released(InputAction.CallbackContext context)
         {
-            Debug.Log("Stop action 2");
-
         }
 
         //Ai chef chops the fish when it in in range of collider
@@ -142,7 +141,6 @@ namespace team03
             if(other.transform == fish && !HasPlayer)
             {
                 float delay = Random.Range(0f,1f);
-                Debug.Log(delay);
                 Invoke("Chop", delay);
             }
         }
@@ -155,6 +153,11 @@ namespace team03
         //tell the animator to play chop animation
         public void Chop()
         {
+            if (!FishInRange)
+            {
+                ChefAudioSource.clip = ChefSFXClips[Random.Range(0, ChefSFXClips.Length)];
+                ChefAudioSource.Play();
+            }
             FishInRange = true;
             ArmAC.SetBool("Chop",true);
         }
@@ -162,7 +165,7 @@ namespace team03
         //Set the knife to able to deal damage
         public void canDamage()
         {
-            knife.CanDamage = true;
+            knife.CanDamage = true;           
         }
 
         //Set the knife to unable to deal damage
@@ -195,6 +198,11 @@ namespace team03
         {
             ActionAllowed = true;
             base.OnGameStart();
+        }
+
+        public void PlayChopSound()
+        {
+            KnifeAudioSource.Play();
         }
     }
 } 

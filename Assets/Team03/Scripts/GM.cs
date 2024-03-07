@@ -12,11 +12,20 @@ namespace team03
         public GameObject Fish;
 
         public AudioSource music;
+
+        private void Start()
+        {
+
+        }
+
+        private void Update()
+        {
+        }
+
         protected override void OnTimesUp()
         {
+            music.volume = Mathf.Clamp(music.volume,0, music.volume -= Time.deltaTime);
             base.OnTimesUp();
-
-            music.Stop();
 
             //if fish is dead
             if (Fish == null)

@@ -23,6 +23,9 @@ namespace team03
         public Transform groundCheck;
         public Vector3 groundCheckSize;
         // Start is called before the first frame update
+
+        public AudioSource FishAudioSource;
+        public AudioClip[] FishNoises;
         void Start()
         {
             rb = GetComponent<Rigidbody>();
@@ -53,6 +56,8 @@ namespace team03
             {
                 rb.AddForce(force, ForceMode.Impulse);
             }
+            FishAudioSource.clip = FishNoises[Random.Range(0, FishNoises.Length)];
+            FishAudioSource.Play();
         }
 
         protected override void OnButton2Pressed(InputAction.CallbackContext context)
@@ -68,6 +73,8 @@ namespace team03
             {
                 rb.AddForce(force, ForceMode.Impulse);
             }
+            FishAudioSource.clip = FishNoises[Random.Range(0, FishNoises.Length)];
+            FishAudioSource.Play();
         }
         public void startRagdoll()
         {

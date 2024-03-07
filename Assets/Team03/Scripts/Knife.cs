@@ -12,6 +12,8 @@ namespace team03
 
         public GameObject FishHitVFX;
         public GameObject Sushi;
+
+        public AudioSource music;
         private void OnCollisionEnter(Collision collision)
         {
             if (ActionAllowed)
@@ -21,6 +23,7 @@ namespace team03
                     Instantiate(FishHitVFX, fish.position, Quaternion.identity);
                     Instantiate(Sushi, fish.position, Quaternion.identity);
                     Destroy(fish.gameObject);
+                    music.volume = Mathf.Clamp(music.volume, 0, music.volume -= Time.deltaTime);
                     ReportGameCompletedEarly();
                 }
             }
