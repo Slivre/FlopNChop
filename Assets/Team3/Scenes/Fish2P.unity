@@ -2163,6 +2163,10 @@ PrefabInstance:
       propertyPath: fish
       value: 
       objectReference: {fileID: 1444987513}
+    - target: {fileID: 8675781588634569745, guid: 9d7c11b902cbd6246861f13d994356ce, type: 3}
+      propertyPath: Sushi
+      value: 
+      objectReference: {fileID: 8514773309826570112, guid: 91dd9f50705bee546a169f482f296df9, type: 3}
     m_RemovedComponents:
     - {fileID: 4589978672078084684, guid: 9d7c11b902cbd6246861f13d994356ce, type: 3}
     - {fileID: 8395129173038952445, guid: 9d7c11b902cbd6246861f13d994356ce, type: 3}
