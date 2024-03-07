@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: Sekisame
   m_EditorClassIdentifier: 
   includeInRandomizer: 1
-  teamNumber: 0
+  teamNumber: 3
   gameTitle: Sekisame
   gameIcon: {fileID: 21300000, guid: 9cb7e444089b02b4a8d001d63701c0bb, type: 3}
-  prompt: Flop!!!
+  announcerText: Flop!!!
+  announcerAudioFile: Flop-RX10MDc_161-01
+  _announcerAudio: {fileID: 8300000, guid: 4ac1a57cb43c31444a383157a251fbaf, type: 3}
   singlePlayerScene: {fileID: 102900000, guid: f30cfa35b756b8d4180b1b88becc4754, type: 3}
   twoPlayerScene: {fileID: 102900000, guid: 8d030d14861076248981af172a77d954, type: 3}
   controls:
