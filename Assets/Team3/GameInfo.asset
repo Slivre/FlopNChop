@@ -18,11 +18,27 @@ MonoBehaviour:
   gameIcon: {fileID: 0}
   prompt: Flop!!!
   singlePlayerScene: {fileID: 102900000, guid: f30cfa35b756b8d4180b1b88becc4754, type: 3}
-  twoPlayerScene: {fileID: 0}
-  controls: []
-  rightPlayerAltControls: []
+  twoPlayerScene: {fileID: 102900000, guid: 8d030d14861076248981af172a77d954, type: 3}
+  controls:
+  - label: Fish
+    primary: 17
+    joiner: 2
+    secondary: 9
+  - label: Fish
+    primary: 18
+    joiner: 2
+    secondary: 10
+  rightPlayerAltControls:
+  - label: Chef
+    primary: 100
+    joiner: 0
+    secondary: 0
+  - label: Chef
+    primary: 1
+    joiner: 0
+    secondary: 0
   singlePlayerScenePath: Assets/Team3/Scenes/Fish1P.unity
-  twoPlayerScenePath: 
+  twoPlayerScenePath: Assets/Team3/Scenes/Fish2P.unity
   postgameMessages:
   - Mglrmglmglmgl!
   bannerImage: {fileID: 0}

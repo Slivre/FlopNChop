@@ -61,7 +61,8 @@ namespace team03
                 }
 
                 //Move the chef based on have player or not
-                if (HasPlayer)
+                //Stop the player moving if they are chopping
+                if (HasPlayer && !FishInRange)
                 {
                     MoveDirection = -stick.normalized.x;
                     Move(MoveDirection);
@@ -113,7 +114,7 @@ namespace team03
 
         protected override void OnButton1Pressed(InputAction.CallbackContext context)
         {
-            Debug.Log("Do action 1");
+            Chop();
 
         }
 
@@ -135,9 +136,10 @@ namespace team03
 
         }
 
+        //Ai chef chops the fish when it in in range of collider
         private void OnTriggerEnter(Collider other)
         {
-            if(other.transform == fish)
+            if(other.transform == fish && !HasPlayer)
             {
                 float delay = Random.Range(0f,1f);
                 Debug.Log(delay);
@@ -150,32 +152,39 @@ namespace team03
             Gizmos.DrawSphere(transform.position + knifeOffset, 1);
         }
 
+        //tell the animator to play chop animation
         public void Chop()
         {
             FishInRange = true;
             ArmAC.SetBool("Chop",true);
         }
 
+        //Set the knife to able to deal damage
         public void canDamage()
         {
             knife.CanDamage = true;
         }
 
+        //Set the knife to unable to deal damage
         public void EndDamage()
         {
             knife.CanDamage = false;
         }
+
+        //End the chop
         public void EndChop()
         {
             FishInRange = false;
             ArmAC.SetBool("Chop", false);
         }
 
+        //Shake the objects on table
         public void ObjectShake()
         {
             TableAC.Play("TableObjectsBounce");
         }
 
+        //Turn off actions when times up
         protected override void OnTimesUp()
         {
             base.OnTimesUp();

@@ -15,7 +15,7 @@ MonoBehaviour:
   <sourcePath>k__BackingField: 
   <destinationPath>k__BackingField: Imported
   quickTestSkip: 255
-  quickTestPlayers: 1
+  quickTestPlayers: 3
   _avoidRepeatsWithin: 5
   _singlePlayer:
   - {fileID: 11400000, guid: 254a656e0ce6eb64281f3127670e1bbe, type: 2}
