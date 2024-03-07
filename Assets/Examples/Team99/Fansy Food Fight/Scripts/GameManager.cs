@@ -1,5 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using System.Collections.Generic;
+
 namespace team99
 {
     public class GameManager : MicrogameEvents
@@ -16,11 +18,15 @@ namespace team99
 
         public AudioSource music;
         public float trophyHeight;
+
+        public GameObject Chef;
+        public GameObject Fish;
+
+        public GameObject Winner;
         protected override void OnTimesUp() {
             base.OnTimesUp();
 
             music.Stop();
-
 
             int player1Count = player1Zone.objectsWithinTrigger.Count;
             int player2Count = player2Zone.objectsWithinTrigger.Count;

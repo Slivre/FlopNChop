@@ -11,6 +11,7 @@ namespace team03
         {
             if(collision.transform.root == fish)
             {
+                Destroy(fish.gameObject);
                 ReportGameCompletedEarly();
             }
         }

@@ -81,7 +81,6 @@ namespace team03
             TailAC.enabled = true;
         }
 
-
         bool isGrounded()
         {
             if(Physics.OverlapBox(groundCheck.position, groundCheckSize, Quaternion.identity, groundLayer).Length > 0)
