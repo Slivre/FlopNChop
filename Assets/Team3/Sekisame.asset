@@ -20,20 +20,20 @@ MonoBehaviour:
   singlePlayerScene: {fileID: 102900000, guid: f30cfa35b756b8d4180b1b88becc4754, type: 3}
   twoPlayerScene: {fileID: 102900000, guid: 8d030d14861076248981af172a77d954, type: 3}
   controls:
-  - label: Fish
-    primary: 17
+  - label: Flop Head
+    primary: 1
     joiner: 0
-    secondary: 9
-  - label: Fish
-    primary: 18
+    secondary: 0
+  - label: Flop Tail
+    primary: 2
     joiner: 0
-    secondary: 10
+    secondary: 0
   rightPlayerAltControls:
-  - label: Chef
+  - label: Move
     primary: 100
     joiner: 0
     secondary: 0
-  - label: Chef
+  - label: Chop
     primary: 1
     joiner: 0
     secondary: 0
