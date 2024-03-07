@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: GamesIndex
   m_EditorClassIdentifier: 
   enableImport: 0
-  quickTestSkip: 21
+  quickTestSkip: 0
   quickTestPlayers: 3
   _avoidRepeatsWithin: 5
   _singlePlayer:
