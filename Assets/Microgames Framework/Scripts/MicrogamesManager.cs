@@ -318,9 +318,11 @@ public class MicrogamesManager : MonoBehaviour
                 }
 
                 CloseCurtainsAnimation();
-
-                Debug.Log("Closing curtains");
+                
                 yield return new WaitUntil(() => _state == GameState.CurtainsClosed);
+
+                // Ensure timer is cued up to play normally next game.
+                countdownAnimator.ResetTrigger("Stop");
 
                 SceneManager.UnloadSceneAsync(gameScene, UnloadSceneOptions.UnloadAllEmbeddedSceneObjects);
 
