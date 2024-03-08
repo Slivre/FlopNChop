@@ -1,0 +1,273 @@
+fileFormatVersion: 2
+guid: c0bf1034db9d1dd4283f277e328b9e38
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: CatCatchingFish_2
+      rect:
+        serializedVersion: 2
+        x: 2413
+        y: 1281
+        width: 552
+        height: 777
+      alignment: 9
+      pivot: {x: 0.5266954, y: 0.02111895}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0030b6581f2c8ca4c9138602fd60fb91
+      internalID: -1810716430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCatchingFish_3
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1299
+        width: 936
+        height: 950
+      alignment: 9
+      pivot: {x: 0.24022609, y: 0.01525442}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ec0a6ca738ab84d87502502a4c3d7e
+      internalID: 1631190611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCatchingFish_6
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 1296
+        width: 873
+        height: 788
+      alignment: 9
+      pivot: {x: 0.27633935, y: 0.0137781445}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f49f4bd61315834588509442bfd45a1
+      internalID: -265475545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCatchingFish_17
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 417
+        width: 566
+        height: 484
+      alignment: 9
+      pivot: {x: 0.38283888, y: 0.020462478}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e4d362ac7e37eb4b88824492b72bb54
+      internalID: -1620067092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CatCatchingFish_22
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 392
+        width: 527
+        height: 465
+      alignment: 9
+      pivot: {x: 0.50699043, y: 0.00086873374}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 432ca3e99717b8e46b2e067a7d0ecc7b
+      internalID: -260529516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      CatCatchingFish_0: 1297099854
+      CatCatchingFish_1: 926866812
+      CatCatchingFish_10: -1395825429
+      CatCatchingFish_11: 264273076
+      CatCatchingFish_12: -2083661978
+      CatCatchingFish_13: -203227988
+      CatCatchingFish_14: 522808410
+      CatCatchingFish_15: -698038734
+      CatCatchingFish_16: -206036173
+      CatCatchingFish_17: -1620067092
+      CatCatchingFish_18: -1477797290
+      CatCatchingFish_19: 398348919
+      CatCatchingFish_2: -1810716430
+      CatCatchingFish_20: 282627529
+      CatCatchingFish_21: -789121533
+      CatCatchingFish_22: -260529516
+      CatCatchingFish_23: 1121749310
+      CatCatchingFish_24: 1273583684
+      CatCatchingFish_25: -806295230
+      CatCatchingFish_26: 1720677610
+      CatCatchingFish_27: 156605157
+      CatCatchingFish_3: 1631190611
+      CatCatchingFish_4: -808867617
+      CatCatchingFish_5: 540205942
+      CatCatchingFish_6: -265475545
+      CatCatchingFish_7: -1995187314
+      CatCatchingFish_8: 302534611
+      CatCatchingFish_9: -1963085275
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

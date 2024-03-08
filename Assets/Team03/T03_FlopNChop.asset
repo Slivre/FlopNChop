@@ -20,7 +20,7 @@ MonoBehaviour:
   announcerAudioFile: Flop-RX10MDc_161-01
   _announcerAudio: {fileID: 8300000, guid: 4ac1a57cb43c31444a383157a251fbaf, type: 3}
   singlePlayerScene: {fileID: 102900000, guid: 855eaf0b8bafe2f448182ad24219f591, type: 3}
-  twoPlayerScene: {fileID: 102900000, guid: 24b80b46635dcae4f8f22f4f9a81dc53, type: 3}
+  twoPlayerScene: {fileID: 102900000, guid: bf1432faa2f1afa4797ed534d977f50e, type: 3}
   controls:
   - label: Flop Head
     primary: 1
@@ -39,8 +39,8 @@ MonoBehaviour:
     primary: 1
     joiner: 0
     secondary: 0
-  singlePlayerScenePath: Assets/Team03/Scenes/Fish2P 1.unity
-  twoPlayerScenePath: Assets/Team03/Scenes/Fish2P.unity
+  singlePlayerScenePath: Assets/Team03/Scenes/FishSinglePlayer.unity
+  twoPlayerScenePath: Assets/Team03/Scenes/FishTwoPlayer.unity
   postgameMessages:
   - Give a man a fish and you feed him for a day; teach a man to fish and you feed
     him for a lifetime.

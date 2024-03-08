@@ -12,19 +12,25 @@ namespace team03
         public GameObject Fish;
 
         public AudioSource music;
+        public static bool gameEnd;
 
         private void Start()
         {
-
+            gameEnd = false;
         }
 
         private void Update()
         {
+            if (gameEnd)
+            {
+                MusicFadeOut();
+            }
         }
 
         protected override void OnTimesUp()
         {
             music.volume = Mathf.Clamp(music.volume,0, music.volume -= Time.deltaTime);
+            gameEnd = true;
             base.OnTimesUp();
 
             //if fish is dead
@@ -45,6 +51,11 @@ namespace team03
             {
                 //Do something
             }
+        }
+
+        public void MusicFadeOut()
+        {
+            music.volume = Mathf.Clamp(music.volume, 0, music.volume -= Time.deltaTime);
         }
     }
 }

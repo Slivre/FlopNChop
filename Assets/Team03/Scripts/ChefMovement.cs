@@ -76,9 +76,12 @@ namespace team03
                 }
                 else
                 {
-                    if (!FishInRange)
+                    if (fish != null)
                     {
-                        Move(fishDirPreDelay);
+                        if (!FishInRange)
+                        {
+                            Move(fishDirPreDelay);
+                        }
                     }
                 }
             }
